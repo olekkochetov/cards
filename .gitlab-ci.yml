@@ -12,29 +12,29 @@ cache:
 		- target
 
 build:
-	- stage: build_and_format
-	- tags: 
+	stage: build_and_format
+	tags: 
 		- docker
-	- script:
+	script:
 		- echo "compiling..."
 		- mvn compile
 format:
-	- stage: build_and_format
-	- tags:
+	stage: build_and_format
+	tags:
 		- docker
-	- script:
+	script:
 		- echo "formatting..."
 		- mvn formatter:format
 test:
-	- stage: test_and_spotbug
-	- tags:
+	stage: test_and_spotbug
+	tags:
 		- docker
-	- script:
+	script:
 		- echo "testing..."
 		- mvn test
 spotbug:
-	- stage: test_and_spotbug
-	- tags:
+	stage: test_and_spotbug
+	tags:
 		- docker
-	- script:
+	script:
 		- echo "add spotbug"
