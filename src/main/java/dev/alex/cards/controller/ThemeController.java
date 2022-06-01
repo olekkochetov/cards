@@ -13,21 +13,22 @@ import dev.alex.cards.service.ThemeService;
 
 @Controller
 public class ThemeController {
-	@Autowired
-	ThemeService themeService;
-	
-	@GetMapping("/")
-	public String getAllThemes(Model model) {
-		List<Theme> themes = themeService.getAllThemes();
-		model.addAttribute("listThemes", themes);
-		return "index";
-	}
-	
-	@GetMapping("/theme-{id}/{name}")
-	public String getTheme(@PathVariable(value="id") long id, @PathVariable(value="name") String name, Model model) {
-		Theme theme = themeService.getThemeById(id);
-		model.addAttribute("theme", theme);
-		model.addAttribute("listThemeCards", theme.getCards());
-		return "theme";
-	}
+    @Autowired
+    ThemeService themeService;
+
+    @GetMapping("/")
+    public String getAllThemes(Model model) {
+        List<Theme> themes = themeService.getAllThemes();
+        model.addAttribute("listThemes", themes);
+        return "index";
+    }
+
+    @GetMapping("/theme-{id}/{name}")
+    public String getTheme(@PathVariable(value = "id") long id, @PathVariable(value = "name") String name,
+            Model model) {
+        Theme theme = themeService.getThemeById(id);
+        model.addAttribute("theme", theme);
+        model.addAttribute("listThemeCards", theme.getCards());
+        return "theme";
+    }
 }
