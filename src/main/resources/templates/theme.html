@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<div th:replace="fragments/_header::header"></div>
+<body>
+<h1 th:text="${theme.name}"></h1>
+<ul th:each="card : ${listThemeCards}">
+	<li><a th:href="@{/card-{id}(id=${card.id})}" th:text="${card.answer}"></a></li>
+</ul>
+	<div th:replace="fragments/_footer::footer"></div>
+	<div th:replace="fragments/_footer::script"></div>
+</body>
+</html>
