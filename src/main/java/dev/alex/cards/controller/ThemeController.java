@@ -23,8 +23,8 @@ public class ThemeController {
 		return "index";
 	}
 	
-	@GetMapping("/{id}")
-	public String getTheme(@PathVariable(value="id") long id, Model model) {
+	@GetMapping("/theme-{id}/{name}")
+	public String getTheme(@PathVariable(value="id") long id, @PathVariable(value="name") String name, Model model) {
 		Theme theme = themeService.getThemeById(id);
 		model.addAttribute("theme", theme);
 		model.addAttribute("listThemeCards", theme.getCards());

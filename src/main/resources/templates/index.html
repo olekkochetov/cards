@@ -6,7 +6,7 @@
 <h1>Home</h1>
 	<div class="container">
 		<ul th:each="theme : ${listThemes}">
-			<li th:text="${theme.name}"></li>
+			<li><a  th:text="${theme.name}" th:href="@{/theme-{id}/{name}(id=${theme.id}, name=${theme.name})}"></a></li>
 		</ul>
 	</div>
 	<div th:replace="fragments/_footer::footer"></div>

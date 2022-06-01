@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1 th:text="${theme.name}"></h1>
+<ul th:each="card : ${listThemeCards}">
+	<li><a th:href="@{/card-{id}(id=${card.id})}" th:text="${card.answer}"></a></li>
+</ul>
+</body>
+</html>
