@@ -1,40 +1,40 @@
 variables:
-	MAVEN_OPTS: -Dmaven.repo.local=.m2/repository
+  MAVEN_OPTS: -Dmaven.repo.local=.m2/repository
 image: maven:latest
 
 stages:
-	- build_and_format
-	- test_and_spotbug
+  - build_and_format
+  - test_and_spotbug
 
 cache:
-	paths:
-		- .m2/repository
-		- target
+  paths:
+    - .m2/repository
+    - target
 
 build:
-	stage: build_and_format
-	tags: 
-		- docker
-	script:
-		- echo "compiling..."
-		- mvn compile
+  stage: build_and_format
+  tags: 
+    - docker
+  script:
+    - echo "compiling..."
+    - mvn compile
 format:
-	stage: build_and_format
-	tags:
-		- docker
-	script:
-		- echo "formatting..."
-		- mvn formatter:format
+  stage: build_and_format
+  tags:
+    - docker
+  script:
+    - echo "formatting..."
+    - mvn formatter:format
 test:
-	stage: test_and_spotbug
-	tags:
-		- docker
-	script:
-		- echo "testing..."
-		- mvn test
+  stage: test_and_spotbug
+  tags:
+    - docker
+  script:
+    - echo "testing..."
+    - mvn test
 spotbug:
-	stage: test_and_spotbug
-	tags:
-		- docker
-	script:
-		- echo "add spotbug"
+  stage: test_and_spotbug
+  tags:
+    - docker
+  script:
+    - echo "add spotbug"
