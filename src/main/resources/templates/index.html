@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-<link rel="stylesheet" href="/css/main.css" />
-</head>
+	<div th:replace="fragments/_header::header"></div>
+	<title>Insert title here</title>
 <body>
-
+<h1>Home</h1>
+	<div class="container">
+		<ul th:each="theme : ${listThemes}">
+			<li th:text="${theme.name}"></li>
+		</ul>
+	</div>
+	<div th:replace="fragments/_footer::footer"></div>
+	<div th:replace="fragments/_footer::script"></div>
 </body>
 </html>

@@ -16,7 +16,7 @@ public class Theme {
 	
 	@OneToMany(mappedBy="theme", cascade=CascadeType.ALL, orphanRemoval=true)
 	private List<Card> cards = new ArrayList<>();
-	
+	public Theme() {}
 	public Theme(long id, String name) {
 		super();
 		this.id = id;
