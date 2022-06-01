@@ -11,37 +11,36 @@ import dev.alex.cards.repository.CardRepository;
 
 @Service
 public class CardServiceImpl implements CardService {
-	
-	@Autowired
-	CardRepository cardRepository;
 
-	@Override
-	public void saveNewCard(Card card) {
-		cardRepository.save(card);
-	}
+    @Autowired
+    CardRepository cardRepository;
 
-	@Override
-	public void deleteCard(Card card) {
-		cardRepository.delete(card);
-	}
+    @Override
+    public void saveNewCard(Card card) {
+        cardRepository.save(card);
+    }
 
-	@Override
-	public Card getCardById(long id) {
-		Card card;
-		Optional<Card> optional = cardRepository.findById(id);
-		
-		if(optional.isPresent()) {
-			card = optional.get();
-		}
-		else {
-			throw new RuntimeException(String.format("no this card: %d", id));
-		}
-		return card;
-	}
+    @Override
+    public void deleteCard(Card card) {
+        cardRepository.delete(card);
+    }
 
-	@Override
-	public List<Card> getThemeCards() {
-		return cardRepository.findAll();
-	}
+    @Override
+    public Card getCardById(long id) {
+        Card card;
+        Optional<Card> optional = cardRepository.findById(id);
+
+        if (optional.isPresent()) {
+            card = optional.get();
+        } else {
+            throw new RuntimeException(String.format("no this card: %d", id));
+        }
+        return card;
+    }
+
+    @Override
+    public List<Card> getThemeCards() {
+        return cardRepository.findAll();
+    }
 
 }

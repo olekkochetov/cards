@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import dev.alex.cards.model.Theme;
 
 @Repository
-public interface ThemeRepository extends  JpaRepository<Theme, Long>{
+public interface ThemeRepository extends JpaRepository<Theme, Long> {
 
 }

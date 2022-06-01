@@ -11,13 +11,13 @@ import dev.alex.cards.service.CardService;
 
 @Controller
 public class CardController {
-	@Autowired
-	CardService cardService;
-	
-	@GetMapping("card-{id}")
-	public String getCard(@PathVariable(value="id") long id, Model model) {
-		Card card = cardService.getCardById(id);
-		model.addAttribute("card", card);
-		return "card";
-	}
+    @Autowired
+    CardService cardService;
+
+    @GetMapping("card-{id}")
+    public String getCard(@PathVariable(value = "id") long id, Model model) {
+        Card card = cardService.getCardById(id);
+        model.addAttribute("card", card);
+        return "card";
+    }
 }

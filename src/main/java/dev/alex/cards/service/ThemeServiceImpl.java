@@ -11,36 +11,35 @@ import dev.alex.cards.repository.ThemeRepository;
 
 @Service
 public class ThemeServiceImpl implements ThemeService {
-	@Autowired
-	ThemeRepository themeRepository;
-	
-	@Override
-	public void saveTheme(Theme theme) {
-		themeRepository.save(theme);
-	}
+    @Autowired
+    ThemeRepository themeRepository;
 
-	@Override
-	public void deleteTheme(Theme theme) {
-		themeRepository.delete(theme);
-	}
+    @Override
+    public void saveTheme(Theme theme) {
+        themeRepository.save(theme);
+    }
 
-	@Override
-	public List<Theme> getAllThemes() {
-		return themeRepository.findAll();
-	}
+    @Override
+    public void deleteTheme(Theme theme) {
+        themeRepository.delete(theme);
+    }
 
-	@Override
-	public Theme getThemeById(long id) {
-		Optional<Theme> optional = themeRepository.findById(id);
-		Theme theme;
-		if(optional.isPresent()) {
-			theme = optional.get();
-		}
-		else {
-			throw new RuntimeException(String.format("No this theme: %d", id));
-		}
-		
-		return theme;
-	}
+    @Override
+    public List<Theme> getAllThemes() {
+        return themeRepository.findAll();
+    }
+
+    @Override
+    public Theme getThemeById(long id) {
+        Optional<Theme> optional = themeRepository.findById(id);
+        Theme theme;
+        if (optional.isPresent()) {
+            theme = optional.get();
+        } else {
+            throw new RuntimeException(String.format("No this theme: %d", id));
+        }
+
+        return theme;
+    }
 
 }

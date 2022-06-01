@@ -12,28 +12,32 @@ import javax.persistence.OneToMany;
 
 @Entity
 public class Theme {
-	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private long id;
-	private String name;
-	
-	@OneToMany(mappedBy="theme", cascade=CascadeType.ALL, orphanRemoval=true)
-	private List<Card> cards = new ArrayList<>();
-	public Theme() {}
-	public Theme(long id, String name) {
-		super();
-		this.id = id;
-		this.name = name;
-	}
-	
-	public long getId() {
-		return id;
-	}
-	public String getName() {
-		return name;
-	}
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
+    private String name;
 
-	public List<Card> getCards() {
-		return cards;
-	}
+    @OneToMany(mappedBy = "theme", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Card> cards = new ArrayList<>();
+
+    public Theme() {
+    }
+
+    public Theme(long id, String name) {
+        super();
+        this.id = id;
+        this.name = name;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public List<Card> getCards() {
+        return cards;
+    }
 }
