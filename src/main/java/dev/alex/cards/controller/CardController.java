@@ -1,5 +1,8 @@
 package dev.alex.cards.controller;
 
-public class CardController {
+import org.springframework.stereotype.Controller;
 
+@Controller
+public class CardController {
+	
 }
