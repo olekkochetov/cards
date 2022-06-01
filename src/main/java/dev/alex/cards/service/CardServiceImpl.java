@@ -1,39 +1,47 @@
 package dev.alex.cards.service;
 
 import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import dev.alex.cards.model.Card;
+import dev.alex.cards.repository.CardRepository;
 
+@Service
 public class CardServiceImpl implements CardService {
+	
+	@Autowired
+	CardRepository cardRepository;
 
 	@Override
 	public void saveNewCard(Card card) {
-		// TODO Auto-generated method stub
-		
+		cardRepository.save(card);
 	}
 
 	@Override
 	public void deleteCard(Card card) {
-		// TODO Auto-generated method stub
-		
+		cardRepository.delete(card);
 	}
 
 	@Override
-	public void updateCard(Card card) {
-		// TODO Auto-generated method stub
+	public Card getCardById(long id) {
+		Card card;
+		Optional<Card> optional = cardRepository.findById(id);
 		
-	}
-
-	@Override
-	public Card getCardById(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		if(optional.isPresent()) {
+			card = optional.get();
+		}
+		else {
+			throw new RuntimeException(String.format("no this card: %d", id));
+		}
+		return card;
 	}
 
 	@Override
 	public List<Card> getThemeCards() {
-		// TODO Auto-generated method stub
-		return null;
+		return cardRepository.findAll();
 	}
 
 }
