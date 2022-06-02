@@ -3,7 +3,7 @@
 <div th:replace="fragments/_header::header"></div>
 <body>
 <div class="container">
-<h1>[[${pageTitle}]]</h1>
+<div th:include="fragments/_header::title"></div>
 	<form action="#" th:action="@{/saveTheme}" th:object="${theme}" method="post">
 		<input type="text" th:field="*{name}"/>	
 		<input type="submit" value="Save" />

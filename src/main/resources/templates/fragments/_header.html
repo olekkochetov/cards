@@ -6,5 +6,8 @@
 		<link rel="stylesheet" href="/css/main.css" />
 		<title th:text="${pageTitle}"></title>
 	</head>
+	<div th:fragment="title">
+			<h1>[[${pageTitle}]]</h1>
+	</div>
 </body>
 </html>

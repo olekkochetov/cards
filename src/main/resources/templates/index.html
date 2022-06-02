@@ -2,7 +2,7 @@
 <html>
 	<div th:replace="fragments/_header::header"></div>
 <body>
-<h1>[[${pageTitle}]]</h1>
+	<div th:include="fragments/_header::title"></div>
 	<div class="container">
 	<a th:href="@{/addNewTheme}">Add New Theme</a>
 		<ul th:each="theme : ${listThemes}">
