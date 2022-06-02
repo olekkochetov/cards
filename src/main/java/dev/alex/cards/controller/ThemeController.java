@@ -22,6 +22,7 @@ public class ThemeController {
     @GetMapping("/")
     public String getAllThemes(Model model) {
         List<Theme> themes = themeService.getAllThemes();
+        model.addAttribute("pageTitle", "Home");
         model.addAttribute("listThemes", themes);
         return "index";
     }
@@ -31,6 +32,7 @@ public class ThemeController {
             Model model) {
         Theme theme = themeService.getThemeById(id);
         model.addAttribute("theme", theme);
+        model.addAttribute("pageTitle", name);
         model.addAttribute("listThemeCards", theme.getCards());
         return "theme";
     }
@@ -38,6 +40,7 @@ public class ThemeController {
     @GetMapping("/addNewTheme")
     public String addNewTheme(Model model) {
     	Theme theme = new Theme();
+    	model.addAttribute("pageTitle", "Add New Theme");
     	model.addAttribute("theme", theme);
     	return "add_theme";
     }

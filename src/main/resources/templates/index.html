@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html>
 	<div th:replace="fragments/_header::header"></div>
-	<title>Insert title here</title>
 <body>
-<h1>Home</h1>
+<h1>[[${pageTitle}]]</h1>
 	<div class="container">
 	<a th:href="@{/addNewTheme}">Add New Theme</a>
 		<ul th:each="theme : ${listThemes}">
