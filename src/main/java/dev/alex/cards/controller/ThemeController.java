@@ -1,6 +1,7 @@
 package dev.alex.cards.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -42,10 +43,16 @@ public class ThemeController {
     }
     
     @PostMapping("/saveTheme")
-    public String saveTheme(@ModelAttribute("theme") Theme theme) {
+    public String saveTheme(@ModelAttribute("t") Theme theme) {
     	themeService.saveTheme(theme);
     	return "redirect:/";
     }
     
+    @GetMapping("/deleteTheme/{id}")
+    public String deleteTheme(@PathVariable("id") long id) {
+    	Theme theme = themeService.getThemeById(id);
+    	themeService.deleteTheme(theme);
+    	return "redirect:/";
+    }
     
 }

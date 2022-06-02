@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<div th:replace="fragments/_header::header"></div>
+<body>
+<h1>Add New Themes</h1>
+
+	<form action="#" th:action="@{/saveTheme}" th:object="${theme}" method="post">
+		<input type="text" th:field="*{name}"/>	
+		<input type="submit" value="Save" />
+	</form>
+	<div th:replace="fragments/_footer::footer"></div>
+	<div th:replace="fragments/_footer::script"></div>
+</body>
+</html>

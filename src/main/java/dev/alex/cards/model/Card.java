@@ -46,4 +46,24 @@ public class Card {
         return answer;
     }
 
+	public Theme getTheme() {
+		return theme;
+	}
+
+	public void setTheme(Theme theme) {
+		this.theme = theme;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public void setQuestion(String question) {
+		this.question = question;
+	}
+
+	public void setAnswer(String answer) {
+		this.answer = answer;
+	}
+    
 }
