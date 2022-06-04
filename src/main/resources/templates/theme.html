@@ -3,6 +3,7 @@
 <div th:replace="fragments/_header::header"></div>
 <body>
 <div th:include="fragments/_header::title"></div>
+<a th:href="@{/theme-{id}/newCard(id=${theme.id})}">Create Card</a>
 <ul th:each="card : ${listThemeCards}">
 	<li><a th:href="@{/card-{id}(id=${card.id})}" th:text="${card.answer}"></a></li>
 </ul>

@@ -46,7 +46,7 @@ public class ThemeController {
     }
     
     @PostMapping("/saveTheme")
-    public String saveTheme(@ModelAttribute("t") Theme theme) {
+    public String saveTheme(@ModelAttribute("theme") Theme theme) {
     	themeService.saveTheme(theme);
     	return "redirect:/";
     }
@@ -57,5 +57,5 @@ public class ThemeController {
     	themeService.deleteTheme(theme);
     	return "redirect:/";
     }
-    
+
 }
