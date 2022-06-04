@@ -6,9 +6,10 @@
 	<form th:action="@{/saveCard}" th:object="${card}" method="post">
 		<input type="text" th:field="*{question}" />
 		<input type="text" th:field="*{answer}" />
-		<input type="text" th:field="*{theme}" />
+		<input type="hidden" th:value="*{theme.id}" th:attr="name='theme'"/>
 		<input type="submit" value="Save Card" />
 	</form>
+	<div th:text="${theme.id}"></div>
 	<div th:replace="fragments/_footer::footer"></div>
 	<div th:replace="fragments/_footer::script"></div>
 </body>

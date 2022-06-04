@@ -31,8 +31,9 @@ public class CardController {
     public String addNewcard(@PathVariable(value="id") long id, Model model) {
         Theme theme =  themeServcie.getThemeById(id);
         Card card = new Card();
-        model.addAttribute("theme_id", theme );
+        model.addAttribute("theme", theme );
         model.addAttribute("card", card );
+        card.setTheme(theme);
     	return "add_card";
     }
     
