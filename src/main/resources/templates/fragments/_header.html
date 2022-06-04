@@ -4,7 +4,10 @@
 	<head th:fragment="header">
 		<meta charset="UTF-8">
 		<link rel="stylesheet" href="/css/main.css" />
-		<title>auto title</title>
+		<title th:text="${pageTitle}"></title>
 	</head>
+	<div th:fragment="title">
+			<h1>[[${pageTitle}]]</h1>
+	</div>
 </body>
 </html>

@@ -2,12 +2,14 @@
 <html>
 <div th:replace="fragments/_header::header"></div>
 <body>
+<div class="container">
 <div th:include="fragments/_header::title"></div>
-<a th:href="@{/theme-{id}/newCard(id=${theme.id})}">Create Card</a>
-<ul th:each="card : ${listThemeCards}">
-	<li><a th:href="@{/card-{id}(id=${card.id})}" th:text="${card.answer}"></a></li>
-</ul>
+	<form action="#" th:action="@{/saveTheme}" th:object="${theme}" method="post">
+		<input type="text" th:field="*{name}"/>	
+		<input type="submit" value="Save" />
+	</form>
 	<div th:replace="fragments/_footer::footer"></div>
 	<div th:replace="fragments/_footer::script"></div>
+</div>
 </body>
 </html>

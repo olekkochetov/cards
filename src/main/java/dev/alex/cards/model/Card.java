@@ -12,7 +12,7 @@ import javax.persistence.Table;
 @Table(name = "learning_cards")
 public class Card {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String question;
     private String answer;
@@ -24,7 +24,6 @@ public class Card {
     }
 
     public Card(String question, String answer, Theme theme) {
-        super();
         this.question = question;
         this.answer = answer;
         this.theme = theme;
@@ -46,4 +45,24 @@ public class Card {
         return answer;
     }
 
+	public Theme getTheme() {
+		return theme;
+	}
+
+	public void setTheme(Theme theme) {
+		this.theme = theme;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public void setQuestion(String question) {
+		this.question = question;
+	}
+
+	public void setAnswer(String answer) {
+		this.answer = answer;
+	}
+    
 }
