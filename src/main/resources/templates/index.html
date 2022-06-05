@@ -2,11 +2,12 @@
 <html>
 	<div th:replace="fragments/_header::header"></div>
 <body>
-	<div th:include="fragments/_header::title"></div>
 	<div class="container">
-	<a th:href="@{/addNewTheme}">Add New Theme</a>
-		<ul th:each="theme : ${listThemes}">
-			<li>
+	<div th:include="fragments/_header::title"></div>
+	<a class="btn btn-primary" th:href="@{/addNewTheme}">Add New Theme</a>
+	<i class="fa fa-user"> </i>
+		<ul class="themes" th:each="theme : ${listThemes}">
+			<li class="theme">
 				<a  th:text="${theme.name}" th:href="@{/theme-{id}/{name}(id=${theme.id}, name=${theme.name})}"></a>
 				<a th:href="@{/deleteTheme/{id}(id=${theme.id})}">Delete</a>
 			</li>
