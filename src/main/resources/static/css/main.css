@@ -12,6 +12,7 @@ body {
 
 a {
 	text-decoration: none;
+	color: #eee;
 }
 ul li {
 	list-style: none;
@@ -20,6 +21,7 @@ ul li {
 h1 {
 	color: #333;
 	font-size: 50px;
+	margin-top: 20px;
 }
 ul {
 	list-style: none;
@@ -33,8 +35,8 @@ h1, h2, h3 {
 	flex-direction: column;
 	/* justify-content: center; */
 	align-items: center;
-	background-color: #cccf00;
-	height: calc(100vh - 50px);
+	background-color: #949488;
+	min-height: calc(100vh - 50px);
 }
 
 .center {
@@ -51,36 +53,87 @@ h1, h2, h3 {
 	display: none;
 }
 
+input[type=text] {
+	min-width: 250px;
+	min-height: 33px;
+	border-radius: 3px;
+	margin-top: 30px;
+}
+
+input[type=submit]{
+	color: #fff;
+}
+
 .themes {
 	width: 70vw;
 }
 
 .theme {
 	margin:  20px;
-	min-height: 40px;
-	background-color: #ddd;
-	
+}
+.wrapper {
 	display: flex;
-	font-size: 30px;
-	color: #333;
 	align-items: center;
 	justify-content: space-between;
-	padding: 5px;
 }
-.theme > a {
-	color: red;
+
+.theme a {
+	/* min-height: 40px; */
+	background-color: #c2c2c2;
+	color: #333;
+	padding: 5px 20px;
+	font-size: 30px;
+}
+
+.theme a.theme-title {
+	flex: 2;
+}
+
+.theme > .description {
+	min-height: 300px;
+	top: 46px;
+	left: 0;
+	width: 100%;
+	height: 300px;
+	background-color: #fff;
+	padding: 10px;
+	font-size: 16px;
+	z-index: 10px;
+}
+
+.theme > .rightElementContainer {
+	display: flex;
+	min-width: 60px;
+	justify-content: space-between;
+}
+.theme > .rightElementContainer > a {
+	color: #304085;
 	font-family: Arial, Sans-Serif;
 }
 
 .theme > a:hover {
-	color: blue;
+	color: #414d86;
 }
 
 .footer {
 	min-height: 50px;
-	background-color: brown;
+	background-color: #444;
 	color: #fff;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+}
+
+.btn {
+	display: inline-block;
+	min-height: 40px;
+	border-radius: 5px;
+	background-color: #304085;
+	text-align: center;
+	padding: 10px;
+	box-shadow: 0px 0px 5px #333;
+	cursor:pointer;
+}
+.btn:hover {
+	background-color: #414d86;
 }
