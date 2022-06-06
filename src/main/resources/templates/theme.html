@@ -5,8 +5,8 @@
 	<div class="container">
 
 		<div th:include="fragments/_header::title"></div>
-		<a th:href="@{/theme-{id}/newCard(id=${theme.id})}">Create Card</a>
-		<ul th:each="card : ${listThemeCards}">
+		<a class="create-link" th:href="@{/theme-{id}/newCard(id=${theme.id})}">Create Card</a>
+		<ul class="cards" th:each="card : ${listThemeCards}">
 			<li><a th:href="@{/card-{id}(id=${card.id})}" th:text="${card.answer}"></a></li>
 		</ul>
 	</div>

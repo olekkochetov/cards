@@ -32,6 +32,7 @@ public class ThemeController {
             Model model) {
         Theme theme = themeService.getThemeById(id);
         model.addAttribute("theme", theme);
+        model.addAttribute("subtitle", "Cards");
         model.addAttribute("pageTitle", name);
         model.addAttribute("listThemeCards", theme.getCards());
         return "theme";

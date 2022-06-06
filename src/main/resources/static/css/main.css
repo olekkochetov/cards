@@ -64,6 +64,14 @@ input[type=submit]{
 	color: #fff;
 }
 
+.main-title {
+}
+
+.main-title span {
+	color: #ddd;
+	font-size: 1.95rem;
+}
+
 .themes {
 	width: 70vw;
 }
@@ -136,4 +144,13 @@ input[type=submit]{
 }
 .btn:hover {
 	background-color: #414d86;
+}
+
+.create-link {
+	font-size: 40px;
+}
+
+.cards {
+	margin-top: 40px;
+	font-size: 30px;
 }
