@@ -8,12 +8,8 @@
 		<title th:text="${pageTitle}"></title>
 	</head>
 	<div th:fragment="title">
-			<div th:if="${subtitle != null}">
-				<h1 class="main-title">[[${subtitle}]] | <span>[[${pageTitle}]]</span></h1>
-			</div>
-			<div th:else>
-				<h1 class="main-title"><span>[[${pageTitle}]]</span></h1>
-			</div>
+		<h1 th:if="${subtitle != null}" class="main-title">[[${subtitle}]] | <span>[[${pageTitle}]]</span></h1>
+		<h1 th:if="${subtitle == null}" class="main-title">[[${pageTitle}]]</h1>
 	</div>
 </body>
 </html>
