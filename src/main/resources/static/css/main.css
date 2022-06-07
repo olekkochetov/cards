@@ -78,6 +78,7 @@ label {
 	min-height: calc(100vh - 50px);
 }
 
+/** card **/
 .center {
 	position: absolute;
 	top: 50%;
@@ -86,8 +87,16 @@ label {
 	font-size: 40px;
 	display: block;
 	cursor: pointer;
+	background-color: #fff;
+	width: 300px;
+	height: 500px;
+	text-align: center;
+	line-height: 500px;
+	border-radius: 5px;
 }
-
+.answer {
+	background-color: #ccceee;
+}
 .hidden {
 	display: none !important;
 }
@@ -246,10 +255,7 @@ input[type=submit]{
 	align-self: flex-start;
 }
 
-.form-wrapper {
-	/* display: flex;
-	flex-direction: column;	 */
-}
+/* Card */
 
 
 

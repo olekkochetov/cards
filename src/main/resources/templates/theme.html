@@ -7,6 +7,9 @@
 		<div th:replace="fragments/_sidebar::sidebar"></div>	
 		<div class="container">
 			<div th:include="fragments/_header::title"></div>
+			<div th:each="element : ${listThemeCards}">
+				<a th:href="@{/card-{id}(id=${element.id})}" th:text="${element.question}"></a>
+			</div>
 			<!-- CARDS -->
 			<div class="boxes">
 			<div class="box">Today</div>
