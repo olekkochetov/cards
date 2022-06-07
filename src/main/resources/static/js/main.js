@@ -25,15 +25,23 @@ elements.forEach((element, index) => {
 
 /**Caret */
 const caretElements = document.querySelectorAll(".caret");
-
+let caretIcon;
 /**Description */
 
 caretElements.forEach((element) => {
 	element.addEventListener("click", function(){
 		let theme = element.parentNode.parentNode.parentNode;
-		console.log(theme);
+		caretIcon = this.querySelector("i");
 		const description = theme.querySelector(".description");
-		description.classList.toggle("hidden");
+		let isHidden = description.classList.toggle("hidden");
+		if(isHidden) {
+			caretIcon.classList.remove("fa-caret-up");
+			caretIcon.classList.add("fa-caret-down");
+		}
+		else {
+			caretIcon.classList.add("fa-caret-up");
+			caretIcon.classList.remove("fa-caret-down");
+		}
 	});
 });
 
