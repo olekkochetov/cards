@@ -4,9 +4,7 @@
 <body>
 	<div class="container">
 		<div th:include="fragments/_header::title"></div>
-		<ul class="cards" th:each="card : ${listThemeCards}">
-			<li><a th:href="@{/card-{id}(id=${card.id})}" th:text="${card.answer}"></a></li>
-		</ul>
+
 		<div class="boxes">
 		<div class="box">Today</div>
 		<div class="box">Tomorrow</div>
