@@ -24,6 +24,10 @@ public class CardController {
     public String getCard(@PathVariable(value = "id") long id, Model model) {
         Card card = cardService.getCardById(id);
         model.addAttribute("card", card);
+        model.addAttribute("subtitle", card.getTheme().getName());
+        model.addAttribute("pageTitle", card.getQuestion());
+        model.addAttribute("card", card);
+        
         return "card";
     }
     
@@ -33,6 +37,8 @@ public class CardController {
         Card card = new Card();
         model.addAttribute("theme", theme );
         model.addAttribute("card", card );
+        model.addAttribute("subtitle", theme.getName());
+        model.addAttribute("pageTitle", "add new card");
         card.setTheme(theme);
     	return "add_card";
     }

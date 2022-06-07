@@ -29,6 +29,9 @@ ul {
 h1, h2, h3 {
 	text-align: center;
 }
+label {
+	display: block;
+}
 
 .container {
 	display: flex;
@@ -57,11 +60,13 @@ input[type=text] {
 	min-width: 250px;
 	min-height: 33px;
 	border-radius: 3px;
-	margin-top: 30px;
 }
 
 input[type=submit]{
 	color: #fff;
+	padding: 10px;
+	background-color: #304085;
+	margin-top: 20px;
 }
 
 .main-title {
@@ -139,18 +144,65 @@ input[type=submit]{
 	background-color: #304085;
 	text-align: center;
 	padding: 10px;
-	box-shadow: 0px 0px 5px #333;
+	/* box-shadow: 0px 0px 5px #333; */
+	box-shadow: 2px 2px 5px #302052;
 	cursor:pointer;
 }
 .btn:hover {
 	background-color: #414d86;
 }
 
-.create-link {
-	font-size: 40px;
-}
-
 .cards {
 	margin-top: 40px;
 	font-size: 30px;
 }
+
+.create-link {
+	font-size: 40px;
+	background-color: #304085;
+	padding: 10px;
+	border-radius: 5px;
+	box-shadow: 2px 2px 5px #302052;
+}
+
+.create-card-section {
+	display: flex;
+	margin-top: 30px;
+	align-items: flex-end;
+}
+
+/* Boxes */
+.boxes {
+	display :flex;
+	flex-direction: row;
+}
+
+.box {
+	min-width: 200px;
+	min-height: 300px;
+	background-color: #fff;
+	margin-left: 10px;
+	text-align: center;
+	line-height: 300px;	
+	cursor: pointer;
+}
+.input-wrapper {
+	display: flex;
+	flex-direction: column;
+	margin-top: 20px;
+}
+
+.input-wrapper label {
+	align-self: flex-start;
+}
+
+.form-wrapper {
+	/* display: flex;
+	flex-direction: column;	 */
+}
+
+
+
+
+
+

@@ -3,12 +3,21 @@
 <div th:replace="fragments/_header::header"></div>
 <body>
 	<div class="container">
-
 		<div th:include="fragments/_header::title"></div>
-		<a class="create-link" th:href="@{/theme-{id}/newCard(id=${theme.id})}">Create Card</a>
 		<ul class="cards" th:each="card : ${listThemeCards}">
 			<li><a th:href="@{/card-{id}(id=${card.id})}" th:text="${card.answer}"></a></li>
 		</ul>
+		<div class="boxes">
+		<div class="box">Today</div>
+		<div class="box">Tomorrow</div>
+		<div class="box">Next Week</div>
+		<div class="box">Next Month</div>
+		<div class="box">Review</div>
+			
+		</div>
+		<div class="create-card-section">
+			<a class="btn" th:href="@{/theme-{id}/newCard(id=${theme.id})}">Create Card</a>
+		</div>
 	</div>
 	<div th:replace="fragments/_footer::footer"></div>
 	<div th:replace="fragments/_footer::script"></div>
