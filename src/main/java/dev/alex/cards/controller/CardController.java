@@ -24,17 +24,11 @@ public class CardController {
     public String getCard(@PathVariable(value = "id") long id, Model model) {
         Card card = cardService.getCardById(id);
         model.addAttribute("card", card);
+        model.addAttribute("subtitle", card.getTheme().getName());
+        model.addAttribute("pageTitle", card.getQuestion());
+        model.addAttribute("card", card);
+        
         return "card";
-    }
-    
-    @GetMapping("/theme-{id}/newCard")
-    public String addNewcard(@PathVariable(value="id") long id, Model model) {
-        Theme theme =  themeServcie.getThemeById(id);
-        Card card = new Card();
-        model.addAttribute("theme", theme );
-        model.addAttribute("card", card );
-        card.setTheme(theme);
-    	return "add_card";
     }
     
     @PostMapping("/saveCard")

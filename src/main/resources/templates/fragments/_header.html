@@ -3,11 +3,13 @@
 <body>
 	<head th:fragment="header">
 		<meta charset="UTF-8">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 		<link rel="stylesheet" href="/css/main.css" />
 		<title th:text="${pageTitle}"></title>
 	</head>
 	<div th:fragment="title">
-			<h1>[[${pageTitle}]]</h1>
+		<h1 th:if="${subtitle != null}" class="main-title">[[${subtitle}]] | <span>[[${pageTitle}]]</span></h1>
+		<h1 th:if="${subtitle == null}" class="main-title">[[${pageTitle}]]</h1>
 	</div>
 </body>
 </html>
