@@ -31,18 +31,6 @@ public class CardController {
         return "card";
     }
     
-    @GetMapping("/theme-{id}/newCard")
-    public String addNewcard(@PathVariable(value="id") long id, Model model) {
-        Theme theme =  themeServcie.getThemeById(id);
-        Card card = new Card();
-        model.addAttribute("theme", theme );
-        model.addAttribute("card", card );
-        model.addAttribute("subtitle", theme.getName());
-        model.addAttribute("pageTitle", "add new card");
-        card.setTheme(theme);
-    	return "add_card";
-    }
-    
     @PostMapping("/saveCard")
     public String saveCard(@ModelAttribute("card") Card card) {
     	cardService.saveNewCard(card);
