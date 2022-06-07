@@ -2,33 +2,38 @@
 <html>
 <div th:replace="fragments/_header::header"></div>
 <body>
-	<div class="container">
-		<div th:include="fragments/_header::title"></div>
-
-		<div class="boxes">
-		<div class="box">Today</div>
-		<div class="box">Tomorrow</div>
-		<div class="box">Next Week</div>
-		<div class="box">Next Month</div>
-		<div class="box">Review</div>
-			
-		</div>
-		<div class="create-card-section">
-			<h2>Add new Card</h2>
-			<form th:action="@{/saveCard}" th:object="${card}" method="post">
-				<div class="form-wrapper">
-					<div class="input-wrapper">
-						<label for="question">add question:</label>
-						<input type="text" th:field="*{question}" />
+	
+	<div class="main-wrapper">
+		<div th:replace="fragments/_sidebar::sidebar"></div>	
+		<div class="container">
+			<div th:include="fragments/_header::title"></div>
+			<!-- CARDS -->
+			<div class="boxes">
+			<div class="box">Today</div>
+			<div class="box">Tomorrow</div>
+			<div class="box">Next Week</div>
+			<div class="box">Next Month</div>
+			<div class="box">Review</div>
+		
+			</div>
+			<!-- CREATE NEW CARD -->
+			<div class="create-card-section">
+				<h2>Add new Card</h2>
+				<form th:action="@{/saveCard}" th:object="${card}" method="post">
+					<div class="form-wrapper">
+						<div class="input-wrapper">
+							<label for="question">add question:</label>
+							<input type="text" th:field="*{question}" />
+						</div>
+						<div class="input-wrapper">
+							<label for="answer">add answer:</label>
+							<input type="text" th:field="*{answer}" />
+						</div>
 					</div>
-					<div class="input-wrapper">
-						<label for="answer">add answer:</label>
-						<input type="text" th:field="*{answer}" />
-					</div>
-				</div>
-					<input type="submit" value="Save Card" />
-					<input type="hidden" th:value="*{theme.id}" th:attr="name='theme'"/>
-			</form>
+						<input type="submit" value="Save Card" />
+						<input type="hidden" th:value="*{theme.id}" th:attr="name='theme'"/>
+				</form>
+			</div>
 		</div>
 	</div>
 	<div th:replace="fragments/_footer::footer"></div>
