@@ -14,7 +14,21 @@
 			
 		</div>
 		<div class="create-card-section">
-			<a class="btn" th:href="@{/theme-{id}/newCard(id=${theme.id})}">Create Card</a>
+			<h2>Add new Card</h2>
+			<form th:action="@{/saveCard}" th:object="${card}" method="post">
+				<div class="form-wrapper">
+					<div class="input-wrapper">
+						<label for="question">add question:</label>
+						<input type="text" th:field="*{question}" />
+					</div>
+					<div class="input-wrapper">
+						<label for="answer">add answer:</label>
+						<input type="text" th:field="*{answer}" />
+					</div>
+				</div>
+					<input type="submit" value="Save Card" />
+					<input type="hidden" th:value="*{theme.id}" th:attr="name='theme'"/>
+			</form>
 		</div>
 	</div>
 	<div th:replace="fragments/_footer::footer"></div>
