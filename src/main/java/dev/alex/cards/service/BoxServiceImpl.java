@@ -82,4 +82,9 @@ public class BoxServiceImpl implements BoxService{
 	public long countBoxes() {
 		return boxRepository.count();
 	}
+
+	@Override
+	public List<Box> getAllBoxes() {
+		return boxRepository.findAll();
+	}
 }

@@ -10,6 +10,7 @@ import dev.alex.cards.model.Card;
 @Service
 public interface BoxService {
 	long countBoxes();
+	List<Box> getAllBoxes();
 	int getAmountElementsToLearn();
 	List<Card> getCardsToLearn();
 	List<Card> getAllCardsInBox(long boxId);

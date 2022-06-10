@@ -12,13 +12,16 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import dev.alex.cards.model.Card;
 import dev.alex.cards.model.Theme;
+import dev.alex.cards.service.BoxService;
 import dev.alex.cards.service.ThemeService;
 
 @Controller
 public class ThemeController {
     @Autowired
     ThemeService themeService;
-
+    @Autowired
+    BoxService boxService;
+    
     @GetMapping("/")
     public String getAllThemes(Model model) {
         List<Theme> themes = themeService.getAllThemes();
@@ -37,6 +40,7 @@ public class ThemeController {
         model.addAttribute("pageTitle", name);
         model.addAttribute("card", card );
         model.addAttribute("listThemeCards", theme.getCards());
+        model.addAttribute("listBoxes", boxService.getAllBoxes());
         //TODO check if setTheme is necessary
         card.setTheme(theme);
         return "theme";
