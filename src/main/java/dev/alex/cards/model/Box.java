@@ -17,23 +17,26 @@ import javax.persistence.Transient;
 public class  Box {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
+	private int id;
 	private String name;
-	@Column(name="start_time")
-	private LocalDateTime startTime;
-	@Transient
+	@Column(name="repeat_in")
 	private int amountDays;
-	@Column(name="end_time")
-	private LocalDateTime endTime;
     @OneToMany(mappedBy = "box", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Card> cards = new ArrayList<>();
 	@Transient
 	private int elementsCounter;
-
+	
+	public Box() {}
+	public Box(String name, int amountDays) {
+		super();
+		this.name = name;
+		this.amountDays = amountDays;
+	}
+	
 	public long getId() {
 		return id;
 	}
-	public void setId(long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	public String getName() {
@@ -42,28 +45,24 @@ public class  Box {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public LocalDateTime getStartTime() {
-		return startTime;
-	}
-	public void setStartTime(LocalDateTime startTime) {
-		this.startTime = startTime;
-	}
+
 	public int getAmountDays() {
 		return amountDays;
 	}
 	public void setAmountDays(int amountDays) {
 		this.amountDays = amountDays;
 	}
-	public LocalDateTime getEndTime() {
-		return endTime;
-	}
-	public void setEndTime(LocalDateTime endTime) {
-		this.endTime = endTime;
-	}
+
 	public int getElementsCounter() {
 		return elementsCounter;
 	}
 	public void setElementsCounter(int elementsCounter) {
 		this.elementsCounter = elementsCounter;
+	}
+	public List<Card> getCards() {
+		return cards;
+	}
+	public void setCards(List<Card> cards) {
+		this.cards = cards;
 	}
 }

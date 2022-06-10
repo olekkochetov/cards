@@ -1,5 +1,8 @@
 package dev.alex.cards.model;
 
+import java.time.LocalDateTime;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -16,6 +19,10 @@ public class Card {
     private long id;
     private String question;
     private String answer;
+	@Column(name="save_time")
+	private LocalDateTime startTime;
+	@Column(name="repeat_time")
+	private LocalDateTime repeatTime;
     @ManyToOne
     @JoinColumn(name = "theme_id")
     private Theme theme;
@@ -66,6 +73,18 @@ public class Card {
 
 	public void setAnswer(String answer) {
 		this.answer = answer;
+	}
+	public LocalDateTime getStartTime() {
+		return startTime;
+	}
+	public void setSaveTime(LocalDateTime saveTime) {
+		this.startTime = saveTime;
+	}
+	public LocalDateTime getRepeatTime() {
+		return repeatTime;
+	}
+	public void setRepeatTime(LocalDateTime repeatTime) {
+		this.repeatTime = repeatTime;
 	}
     
 }
