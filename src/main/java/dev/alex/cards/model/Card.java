@@ -19,6 +19,9 @@ public class Card {
     @ManyToOne
     @JoinColumn(name = "theme_id")
     private Theme theme;
+    @ManyToOne
+    @JoinColumn(name = "box_id")
+    private Box box;
 
     public Card() {
     }
