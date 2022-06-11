@@ -60,12 +60,12 @@ public class Box {
     public int getElementsCounter() {
         return cards.size();
     }
-    
+
     public List<Card> getCardsByTheme(Theme theme) {
-    	List<Card> cards = getCards();
-    	return cards.stream().filter(card -> card.getTheme() == theme).collect(Collectors.toList());
+        List<Card> cards = getCards();
+        return cards.stream().filter(card -> card.getTheme() == theme).collect(Collectors.toList());
     }
-    
+
     public List<Card> getCards() {
         return cards;
     }

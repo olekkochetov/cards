@@ -24,9 +24,9 @@ public class BoxController {
         }
         return "redirect:/";
     }
-    
+
     @GetMapping("")
     public String showAllCardsInBox() {
-    	return "";
+        return "";
     }
 }
