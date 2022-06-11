@@ -28,9 +28,9 @@ public class Theme {
         this.id = id;
         this.name = name;
     }
-    
+
     public Theme(String name) {
-    	this.name = name;
+        this.name = name;
     }
 
     public long getId() {
@@ -45,16 +45,16 @@ public class Theme {
         return cards;
     }
 
-	public void setId(long id) {
-		this.id = id;
-	}
+    public void setId(long id) {
+        this.id = id;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public void setCards(List<Card> cards) {
-		this.cards = cards;
-	}
-    
+    public void setCards(List<Card> cards) {
+        this.cards = cards;
+    }
+
 }

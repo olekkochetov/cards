@@ -19,10 +19,10 @@ public class Card {
     private long id;
     private String question;
     private String answer;
-	@Column(name="save_time")
-	private LocalDateTime startTime;
-	@Column(name="repeat_time")
-	private LocalDateTime repeatTime;
+    @Column(name = "save_time")
+    private LocalDateTime startTime;
+    @Column(name = "repeat_time")
+    private LocalDateTime repeatTime;
     @ManyToOne
     @JoinColumn(name = "theme_id")
     private Theme theme;
@@ -55,36 +55,51 @@ public class Card {
         return answer;
     }
 
-	public Theme getTheme() {
-		return theme;
+    public Theme getTheme() {
+        return theme;
+    }
+
+    public void setTheme(Theme theme) {
+        this.theme = theme;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public void setQuestion(String question) {
+        this.question = question;
+    }
+
+    public void setAnswer(String answer) {
+        this.answer = answer;
+    }
+
+    public LocalDateTime getStartTime() {
+        return startTime;
+    }
+
+    public void setSaveTime(LocalDateTime saveTime) {
+        this.startTime = saveTime;
+    }
+
+    public LocalDateTime getRepeatTime() {
+        return repeatTime;
+    }
+
+    public void setRepeatTime(LocalDateTime repeatTime) {
+        this.repeatTime = repeatTime;
+    }
+
+	public Box getBox() {
+		return box;
 	}
 
-	public void setTheme(Theme theme) {
-		this.theme = theme;
+	public void setBox(Box box) {
+		this.box = box;
 	}
 
-	public void setId(long id) {
-		this.id = id;
+	public void setStartTime(LocalDateTime startTime) {
+		this.startTime = startTime;
 	}
-
-	public void setQuestion(String question) {
-		this.question = question;
-	}
-
-	public void setAnswer(String answer) {
-		this.answer = answer;
-	}
-	public LocalDateTime getStartTime() {
-		return startTime;
-	}
-	public void setSaveTime(LocalDateTime saveTime) {
-		this.startTime = saveTime;
-	}
-	public LocalDateTime getRepeatTime() {
-		return repeatTime;
-	}
-	public void setRepeatTime(LocalDateTime repeatTime) {
-		this.repeatTime = repeatTime;
-	}
-    
 }

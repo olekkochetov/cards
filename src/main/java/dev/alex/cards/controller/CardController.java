@@ -17,9 +17,10 @@ import dev.alex.cards.service.ThemeService;
 public class CardController {
     @Autowired
     CardService cardService;
-    
+
     @Autowired
     ThemeService themeServcie;
+
     @GetMapping("card-{id}")
     public String getCard(@PathVariable(value = "id") long id, Model model) {
         Card card = cardService.getCardById(id);
@@ -27,13 +28,13 @@ public class CardController {
         model.addAttribute("subtitle", card.getTheme().getName());
         model.addAttribute("pageTitle", card.getQuestion());
         model.addAttribute("card", card);
-        
+
         return "card";
     }
-    
+
     @PostMapping("/saveCard")
     public String saveCard(@ModelAttribute("card") Card card) {
-    	cardService.saveNewCard(card);
-    	return "redirect:/";
+        cardService.saveNewCard(card);
+        return "redirect:/";
     }
 }

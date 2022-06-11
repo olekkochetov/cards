@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import dev.alex.cards.model.Box;
 
 @Repository
-public interface BoxRepository extends JpaRepository<Box, Long>{
-	
+public interface BoxRepository extends JpaRepository<Box, Long> {
+
 }

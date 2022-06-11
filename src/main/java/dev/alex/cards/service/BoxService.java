@@ -1,4 +1,5 @@
 package dev.alex.cards.service;
+
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -9,14 +10,19 @@ import dev.alex.cards.model.Card;
 
 @Service
 public interface BoxService {
-	long countBoxes();
-	List<Box> getAllBoxes();
-	int getAmountElementsToLearn();
-	List<Card> getCardsToLearn();
-	List<Card> getAllCardsInBox(long boxId);
-	Box getBoxById(long boxId);
-	LocalDateTime getEndDate(Card card);
-	LocalDateTime getStartDate(Card card);
-	LocalDateTime getTodayDate();
-	void saveBox(Box box);
+    long countBoxes();
+
+    List<Box> getAllBoxes();
+
+    int getElementsNumber(long boxId);
+
+    List<Card> getCardsToLearn();
+
+    List<Card> getAllCardsInBox(long boxId);
+
+    Box getBoxById(long boxId);
+
+    void addCardToBox(long boxId, Card card);
+
+    void saveBox(Box box);
 }
