@@ -20,7 +20,7 @@
 							<a th:href="@{/{theme}/box-{boxId}(theme=${theme.name}, boxId=${box.id})}">See all cards</a>
 							<a th:href="@{/{theme}/box-{boxId}/learn(theme=${theme.name}, boxId=${box.id})}">Learn</a>
 						</div>
-						<div class="amountCards" th:text="'cards: '+ ${box.getElementsCounter()}">
+						<div class="amountCards" th:text="'cards: '+ ${box.getCardsByTheme(theme).size()}">
 						</div>
 					</div>
 				</div>

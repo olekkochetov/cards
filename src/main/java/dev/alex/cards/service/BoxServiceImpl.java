@@ -48,9 +48,10 @@ public class BoxServiceImpl implements BoxService {
     }
 
     @Override
-    public List<Card> getAllCardsInBox(long boxId) {
-        Box box = getBoxById(boxId);
-        return box.getCards();
+    public List<Card> getAllCardsInBox(long themeId, long boxId) {
+//        Box box = getBoxById(boxId);
+//    	box.getCards();
+    	return boxRepository.getCardsByBoxIdAndThemeId(themeId, boxId);
     }
 
     @Override

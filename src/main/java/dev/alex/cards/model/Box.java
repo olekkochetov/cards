@@ -1,8 +1,9 @@
 package dev.alex.cards.model;
 
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -11,7 +12,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-import javax.persistence.Transient;
 
 @Entity
 public class Box {
@@ -60,7 +60,12 @@ public class Box {
     public int getElementsCounter() {
         return cards.size();
     }
-
+    
+    public List<Card> getCardsByTheme(Theme theme) {
+    	List<Card> cards = getCards();
+    	return cards.stream().filter(card -> card.getTheme() == theme).collect(Collectors.toList());
+    }
+    
     public List<Card> getCards() {
         return cards;
     }
