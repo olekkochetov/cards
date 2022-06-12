@@ -9,12 +9,10 @@
             <h2>Themes</h2>
         </div>
         <div class="sidebar">
-            <ul>
-                <li><a href="#">link-1</a></li>
-                <li><a href="#">link-2</a></li>
-                <li><a href="#">link-3</a></li>
-                <li><a href="#">link-4</a></li>
-                <li><a href="#">link-5</a></li>
+            <ul >
+  				<li th:each="theme : ${listThemes}">
+  					 <a th:href="@{/theme-{themeId}/{themeName}(themeId=${theme.id}, themeName=${theme.name})}" th:text="${theme.name}"></a>
+				</li>
             </ul>
         </div>
     </div>

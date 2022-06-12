@@ -22,7 +22,7 @@ ul li {
 }
 
 h1 {
-	color: #333;
+	color: #444;
 	font-size: 50px;
 	margin-top: 20px;
 }
@@ -41,7 +41,7 @@ label {
 }
 
 .sidebar {
-	min-width: 300px;
+	width: 300px;
 	background-color: #808082;
 	min-height: calc(100vh - 50px - 60px);
 	display: flex;
@@ -65,9 +65,18 @@ label {
 .sidebar a {
 	font-size: 27px;
 	display: block;
-	padding: 5px;
+	padding: 10px 15px;
 	letter-spacing: 1px;
+	width: 300px;	
 }
+
+.sidebar a:hover {
+	background-color: #606062;
+}
+.sidebar a.active {
+	background-color: #606062;
+}
+
 .container {
 	display: flex;
 	flex-direction: column;
