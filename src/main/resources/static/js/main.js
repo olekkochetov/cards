@@ -45,7 +45,7 @@ caretElements.forEach((element) => {
 	});
 });
 
-/**Delete */
+/**Delete Theme */
 
 const deleteButtons = document.querySelectorAll(".delete");
 
@@ -57,5 +57,17 @@ deleteButtons.forEach((btn) => {
 	});
 });
 
+/** Active Link */
+const links = document.querySelectorAll(".sidebar a");
+let pathname = window.location.pathname;
+
+links.forEach((link) => {
+	if(link.getAttribute("href")==pathname) {
+		link.classList.add("active");
+	}
+	else {
+		link.classList.remove("active");
+	}
+});
 
 

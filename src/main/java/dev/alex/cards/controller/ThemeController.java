@@ -38,9 +38,10 @@ public class ThemeController {
         Box box = boxService.getBoxById(1);
         Card card = new Card();
         model.addAttribute("theme", theme);
-        model.addAttribute("subtitle", "Cards");
+        model.addAttribute("subtitle", "Theme");
         model.addAttribute("pageTitle", name);
         model.addAttribute("card", card);
+        model.addAttribute("listThemes", themeService.getAllThemes());
         model.addAttribute("listBoxes", boxService.getAllBoxes());
         model.addAttribute("box", box);
         card.setBox(box);
