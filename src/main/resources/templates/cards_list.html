@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+	<div th:replace="fragments/_header::header"></div>
+	<body>
+		<div class="container">
+			<h1>List</h1>
+			<div th:each="card : ${cardList}">
+				<a th:href="@{/card-{id}(id=${card.id})}" th:text="${card.question}"></a>
+			</div>
+		</div>
+		<div th:replace="fragments/_footer::footer"></div>
+		<div th:replace="fragments/_footer::script"></div>
+	</body>
+</html>

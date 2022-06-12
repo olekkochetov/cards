@@ -42,4 +42,8 @@ public class ThemeServiceImpl implements ThemeService {
         return theme;
     }
 
+	@Override
+	public Theme findThemeByName(String name) {
+		return themeRepository.findThemeByName(name);
+	}
 }

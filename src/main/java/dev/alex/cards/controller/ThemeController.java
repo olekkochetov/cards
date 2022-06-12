@@ -39,10 +39,8 @@ public class ThemeController {
         model.addAttribute("subtitle", "Cards");
         model.addAttribute("pageTitle", name);
         model.addAttribute("card", card);
-        model.addAttribute("listThemeCards", theme.getCards());
         model.addAttribute("listBoxes", boxService.getAllBoxes());
 
-        // TODO check if setTheme is necessary
         card.setTheme(theme);
         return "theme";
     }

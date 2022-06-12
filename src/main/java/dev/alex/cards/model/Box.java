@@ -17,7 +17,7 @@ import javax.persistence.OneToMany;
 public class Box {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private long id;
     private String name;
     @Column(name = "repeat_in")
     private int amountDays;
