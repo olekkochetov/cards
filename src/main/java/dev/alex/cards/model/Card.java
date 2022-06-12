@@ -91,15 +91,15 @@ public class Card {
         this.repeatTime = repeatTime;
     }
 
-	public Box getBox() {
-		return box;
-	}
+    public Box getBox() {
+        return box;
+    }
 
-	public void setBox(Box box) {
-		this.box = box;
-	}
+    public void setBox(Box box) {
+        this.box = box;
+    }
 
-	public void setStartTime(LocalDateTime startTime) {
-		this.startTime = startTime;
-	}
+    public void setStartTime(LocalDateTime startTime) {
+        this.startTime = startTime;
+    }
 }

@@ -15,13 +15,10 @@
 			<div class="boxes">
 				<div th:each="box : ${listBoxes}">
 					<div class="box">
-						<span  th:text="${box.name}"></span>
-						<div class="boxMiddleContent">
-							<a th:href="@{/{theme}/box-{boxId}(theme=${theme.name}, boxId=${box.id})}">See all cards</a>
-							<a th:href="@{/{theme}/box-{boxId}/learn(theme=${theme.name}, boxId=${box.id})}">Learn</a>
-						</div>
-						<div class="amountCards" th:text="'cards: '+ ${box.getCardsByTheme(theme).size()}">
-						</div>
+							<a th:href="@{/{theme}/box-{boxId}(theme=${theme.name}, boxId=${box.id})}">
+								<h3  th:text="${box.name}"></h3>
+								<div class="amountCards" th:text="'cards: '+ ${box.getCardsByTheme(theme).size()}"></div>
+							</a>
 					</div>
 				</div>
 			</div>
@@ -41,6 +38,7 @@
 					</div>
 						<input type="submit" value="Save Card" />
 						<input type="hidden" th:value="*{theme.id}" th:attr="name='theme'"/>
+						<input type="hidden" th:value="*{box.id}" th:attr="name='box'"/>
 				</form>
 			</div>
 		</div>

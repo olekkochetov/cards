@@ -18,7 +18,7 @@ public interface BoxService {
 
     List<Card> getCardsToLearn();
 
-    List<Card> getAllCardsInBox(long themeId, long boxId);
+    List<Card> getAllCardsInBox(String themeName, long boxId);
 
     Box getBoxById(long boxId);
 
