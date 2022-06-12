@@ -12,4 +12,6 @@ public interface ThemeService {
     List<Theme> getAllThemes();
 
     Theme getThemeById(long id);
+    
+    Theme findThemeByName(String name);
 }

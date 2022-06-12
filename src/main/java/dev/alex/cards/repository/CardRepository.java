@@ -11,6 +11,6 @@ import dev.alex.cards.model.Card;
 
 @Repository
 public interface CardRepository extends JpaRepository<Card, Long> {
-	@Query("Select c from Card c where c.theme = :theme and c.box = :box")
-	List<Card> findCardByThemeAndBox(@Param("box") int boxId, @Param("theme") int themeId);
+    @Query("Select c from Card c where c.theme = :theme and c.box = :box")
+    List<Card> findCardByThemeAndBox(@Param("box") int boxId, @Param("theme") int themeId);
 }
