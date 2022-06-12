@@ -7,17 +7,20 @@
 		<div th:replace="fragments/_sidebar::sidebar"></div>	
 		<div class="container">
 			<div th:include="fragments/_header::title"></div>
-			<div th:each="element : ${listThemeCards}">
+			<!--<div th:each="element : ${listThemeCards}">
 				<a th:href="@{/card-{id}(id=${element.id})}" th:text="${element.question}"></a>
 			</div>
+			-->
 			<!-- CARDS -->
 			<div class="boxes">
-			<div class="box">Today</div>
-			<div class="box">Tomorrow</div>
-			<div class="box">Next Week</div>
-			<div class="box">Next Month</div>
-			<div class="box">Review</div>
-		
+				<div th:each="box : ${listBoxes}">
+					<div class="box">
+							<a th:href="@{/{theme}/box-{boxId}(theme=${theme.name}, boxId=${box.id})}">
+								<h3  th:text="${box.name}"></h3>
+								<div class="amountCards" th:text="'cards: '+ ${box.getCardsByTheme(theme).size()}"></div>
+							</a>
+					</div>
+				</div>
 			</div>
 			<!-- CREATE NEW CARD -->
 			<div class="create-card-section">

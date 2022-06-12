@@ -7,5 +7,5 @@ import dev.alex.cards.model.Theme;
 
 @Repository
 public interface ThemeRepository extends JpaRepository<Theme, Long> {
-
+	Theme findThemeByName(String themeName);
 }
