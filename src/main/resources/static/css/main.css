@@ -100,7 +100,7 @@ label {
 	width: 300px;
 	height: 500px;
 	text-align: center;
-	line-height: 500px;
+	padding-top: 200px;
 	border-radius: 5px;
 }
 .answer {
@@ -171,9 +171,7 @@ input[type=submit]{
 	display: flex;
 	justify-content: center;
 }
-
-
-
+ 	
 .theme > .rightElementContainer {
 	display: flex;
 	min-width: 60px;
