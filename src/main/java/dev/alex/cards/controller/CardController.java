@@ -35,6 +35,9 @@ public class CardController {
     @PostMapping("/saveCard")
     public String saveCard(@ModelAttribute("card") Card card) {
         cardService.saveNewCard(card);
-        return "redirect:/";
+        Theme theme = card.getTheme();
+        String themeName = theme.getName();
+        long themeId = theme.getId();
+        return "redirect:/theme-" + themeId + "/" + themeName;
     }
 }

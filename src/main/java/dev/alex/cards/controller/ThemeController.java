@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import dev.alex.cards.model.Box;
 import dev.alex.cards.model.Card;
 import dev.alex.cards.model.Theme;
 import dev.alex.cards.service.BoxService;
@@ -34,13 +35,15 @@ public class ThemeController {
     public String getTheme(@PathVariable(value = "id") long id, @PathVariable(value = "name") String name,
             Model model) {
         Theme theme = themeService.getThemeById(id);
+        Box box = boxService.getBoxById(1);
         Card card = new Card();
         model.addAttribute("theme", theme);
         model.addAttribute("subtitle", "Cards");
         model.addAttribute("pageTitle", name);
         model.addAttribute("card", card);
         model.addAttribute("listBoxes", boxService.getAllBoxes());
-
+        model.addAttribute("box", box);
+        card.setBox(box);
         card.setTheme(theme);
         return "theme";
     }
