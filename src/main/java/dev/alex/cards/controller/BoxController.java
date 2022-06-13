@@ -40,7 +40,8 @@ public class BoxController {
     	Box box = boxService.getBoxById(boxId);
     	Theme theme =themeService.findThemeByName(themeName);
     	List<Card> cardsOfTheBox = box.getCardsByTheme(theme);
-    	
+    	model.addAttribute(theme);
+    	model.addAttribute("pageTitle", theme.getName());
     	model.addAttribute("cardList", cardsOfTheBox);
         return "cards_list";
     }

@@ -40,4 +40,13 @@ public class CardController {
         long themeId = theme.getId();
         return "redirect:/theme-" + themeId + "/" + themeName;
     }
+    
+    
+    @GetMapping("/deleteCard/{themeName}/{id}")
+    public String deleteCard(@PathVariable(value="id") long id, @PathVariable(value="themeName") String themeName) {
+    	Theme theme = themeServcie.findThemeByName(themeName);
+    	Card card = cardService.getCardById(id);
+    	cardService.deleteCard(card);
+    	return "redirect:/" + themeName + "/box-" + card.getBox().getId();
+    }
 }

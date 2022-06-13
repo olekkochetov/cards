@@ -3,10 +3,30 @@
 	<div th:replace="fragments/_header::header"></div>
 	<body>
 		<div class="container">
-			<h1>List</h1>
-			<div th:each="card : ${cardList}">
-				<a th:href="@{/card-{id}(id=${card.id})}" th:text="${card.question}"></a>
-			</div>
+			<h1>[[${theme.name}]]</h1>
+			<table class="cardsTable" >
+				<thead>
+					<tr>
+						<th>Question</th>
+						<th>Answer</th>
+						<th>Actions</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="card : ${cardList}" border="1">
+						<td >
+							<a th:href="@{/card-{id}(id=${card.id})}" th:text="${card.question}"></a>
+						</td>
+						<td>
+							<a th:href="@{/card-{id}(id=${card.id})}" th:text="${card.answer}"></a>
+						</td>
+						<td>
+							<a th:href="@{/deleteCard/{themeName}/{id}(id=${card.id}, themeName=${theme.name})}"> <i class="fa-solid fa-trash"></i> </a>
+							<a th:href="@{/updateCard/{id}(id=${card.id})}"> <i class="fa-solid fa-pencil-square"></i> </a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
 		</div>
 		<div th:replace="fragments/_footer::footer"></div>
 		<div th:replace="fragments/_footer::script"></div>
