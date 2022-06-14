@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1> Update Card</h1>
+	<form action="#" th:action="@{/saveCard}" th:object="${card}" method="post">
+		<input type="hidden" th:field="*{id}" />
+		<input type="text" th:field="*{question}"/>
+		<input type="text" th:field="*{answer}"/>
+		<input type="hidden" th:value="*{theme.id}" th:attr="name='theme'" />
+		<input type="hidden" th:value="*{box.id}" th:attr="name='box'"/>
+		<input type="submit" value="update card" />
+	</form>
+</body>
+</html>

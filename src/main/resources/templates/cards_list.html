@@ -4,6 +4,7 @@
 	<body>
 		<div class="container">
 			<h1>[[${theme.name}]]</h1>
+			<a class="learn-link" href="#">Learn</a>
 			<table class="cardsTable" >
 				<thead>
 					<tr>
@@ -13,7 +14,7 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr th:each="card : ${cardList}" border="1">
+					<tr th:each="card : ${cardList}">
 						<td >
 							<a th:href="@{/card-{id}(id=${card.id})}" th:text="${card.question}"></a>
 						</td>
@@ -22,11 +23,12 @@
 						</td>
 						<td>
 							<a th:href="@{/deleteCard/{themeName}/{id}(id=${card.id}, themeName=${theme.name})}"> <i class="fa-solid fa-trash"></i> </a>
-							<a th:href="@{/updateCard/{id}(id=${card.id})}"> <i class="fa-solid fa-pencil-square"></i> </a>
+							<a th:href="@{/updateCardForm/{themeName}/{id}(id=${card.id}, themeName=${theme.name})}"> <i class="fa-solid fa-pencil-square"></i> </a>
 						</td>
 					</tr>
 				</tbody>
 			</table>
+			<div class="cards hidden"><h1>HIDDEN</h1></div>
 		</div>
 		<div th:replace="fragments/_footer::footer"></div>
 		<div th:replace="fragments/_footer::script"></div>

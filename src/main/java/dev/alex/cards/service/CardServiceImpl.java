@@ -43,4 +43,14 @@ public class CardServiceImpl implements CardService {
         return cardRepository.findAll();
     }
 
+	@Override
+	public boolean cardExists(Card card) {
+		Optional<Card> opt = cardRepository.findById(card.getId());
+		if(opt.isPresent()) {
+			System.out.println("EXISTS!!!!!!!!!!!!");
+			return true;
+		}
+		return false;
+	}
+
 }
