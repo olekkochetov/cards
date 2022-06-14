@@ -37,8 +37,14 @@ public class CardController {
         Theme theme = card.getTheme();
         String themeName = theme.getName();
         long themeId = theme.getId();
-        cardService.saveNewCard(card);
-        return "redirect:/theme-" + themeId + "/" + themeName;
+        if(cardService.cardExists(card)) {
+	        cardService.saveNewCard(card);
+	        return "redirect:/" + themeName + "/box-" + card.getBox().getId();
+        }
+        else {
+        	cardService.saveNewCard(card);
+        	return "redirect:/theme-" + themeId + "/" + themeName;
+        }
     }
     
     

@@ -6,7 +6,7 @@ import dev.alex.cards.model.Card;
 
 public interface CardService {
     void saveNewCard(Card card);
-
+    boolean cardExists(Card card);
     void deleteCard(Card card);
 
     Card getCardById(long id);
