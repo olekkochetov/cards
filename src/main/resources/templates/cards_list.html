@@ -22,7 +22,7 @@
 						</td>
 						<td>
 							<a th:href="@{/deleteCard/{themeName}/{id}(id=${card.id}, themeName=${theme.name})}"> <i class="fa-solid fa-trash"></i> </a>
-							<a th:href="@{/updateCard/{id}(id=${card.id})}"> <i class="fa-solid fa-pencil-square"></i> </a>
+							<a th:href="@{/updateCardForm/{themeName}/{id}(id=${card.id}, themeName=${theme.name})}"> <i class="fa-solid fa-pencil-square"></i> </a>
 						</td>
 					</tr>
 				</tbody>

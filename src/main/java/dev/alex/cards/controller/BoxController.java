@@ -38,11 +38,12 @@ public class BoxController {
     @GetMapping("/{theme}/box-{boxId}")
     public String showAllCardsInBox(@PathVariable(value="theme") String themeName, @PathVariable(value="boxId") long boxId, Model model) {
     	Box box = boxService.getBoxById(boxId);
-    	Theme theme =themeService.findThemeByName(themeName);
+    	Theme theme = themeService.findThemeByName(themeName);
     	List<Card> cardsOfTheBox = box.getCardsByTheme(theme);
     	model.addAttribute(theme);
     	model.addAttribute("pageTitle", theme.getName());
     	model.addAttribute("cardList", cardsOfTheBox);
         return "cards_list";
     }
+
 }
