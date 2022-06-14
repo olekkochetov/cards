@@ -34,17 +34,20 @@ public class CardController {
 
     @PostMapping("/saveCard")
     public String saveCard(@ModelAttribute("card") Card card) {
+    	String stringToReturn = "";
         Theme theme = card.getTheme();
         String themeName = theme.getName();
         long themeId = theme.getId();
+        
         if(cardService.cardExists(card)) {
-	        cardService.saveNewCard(card);
-	        return "redirect:/" + themeName + "/box-" + card.getBox().getId();
+        	stringToReturn = "redirect:/" + themeName + "/box-" + card.getBox().getId();
         }
         else {
-        	cardService.saveNewCard(card);
-        	return "redirect:/theme-" + themeId + "/" + themeName;
+        	stringToReturn = "redirect:/theme-" + themeId + "/" + themeName;
         }
+        
+        cardService.saveNewCard(card);
+        return stringToReturn;
     }
     
     
