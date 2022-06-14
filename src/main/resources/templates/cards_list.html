@@ -4,6 +4,7 @@
 	<body>
 		<div class="container">
 			<h1>[[${theme.name}]]</h1>
+			<a class="learn-link" href="#">Learn</a>
 			<table class="cardsTable" >
 				<thead>
 					<tr>
@@ -13,7 +14,7 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr th:each="card : ${cardList}" border="1">
+					<tr th:each="card : ${cardList}">
 						<td >
 							<a th:href="@{/card-{id}(id=${card.id})}" th:text="${card.question}"></a>
 						</td>
@@ -27,6 +28,7 @@
 					</tr>
 				</tbody>
 			</table>
+			<div class="cards hidden"><h1>HIDDEN</h1></div>
 		</div>
 		<div th:replace="fragments/_footer::footer"></div>
 		<div th:replace="fragments/_footer::script"></div>

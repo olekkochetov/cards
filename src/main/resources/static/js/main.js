@@ -14,7 +14,6 @@ span.innerHTML = year;
  */
 
 let elements = document.querySelectorAll(".center");
-//let hidden;
 elements.forEach((element, index) => {
 	element.addEventListener("click", function(event){
 		let hidden = document.querySelector(".hidden");
@@ -69,5 +68,22 @@ links.forEach((link) => {
 		link.classList.remove("active");
 	}
 });
+
+/** cards list page  */
+const learnLink = document.querySelector(".learn-link");
+const cardsTable = document.querySelector(".cardsTable");
+const cardsSection = document.querySelector(".cards");
+const cardsToLearn = [cardsTable, cardsSection];
+
+learnLink.addEventListener("click", (e) => {
+	e.preventDefault();
+	cardsToLearn.forEach(element => {
+		element.classList.toggle("hidden");
+	});
+})
+
+
+
+
 
 
